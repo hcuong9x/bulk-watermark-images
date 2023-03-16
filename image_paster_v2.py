@@ -54,7 +54,7 @@ class ImagePasterV2:
         for dirpath, dirnames, filenames in os.walk(folder_path):
             for filename in filenames:
                 if filename.endswith(('.jpg', '.jpeg', '.png')):
-                    if (filename.lower().startswith('no-edit')):
+                    if (filename.lower().startswith('no-edit') or filename.lower().startswith('no_edit')):
                         continue
                     file_path = os.path.join(dirpath, filename)
                     paster.setup(file_path, paste_path, paste_location)
